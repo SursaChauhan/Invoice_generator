@@ -1,0 +1,73 @@
+/* InvoiceSummary.css */
+.invoice-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    margin-top: 10px;
+    position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  }
+  /* .invoice-summary >div{
+    display: flex;
+  } */
+  .invoice-item {
+    display: flex;
+    font-size: 15px;
+    /* flex-direction: column; */
+    align-items: center;
+    /* margin-right: 15px; */
+    background-color: rgb(235,228,242);
+    padding: 10px 5px;
+    border-radius: 4px;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .value {
+    color: rgb(89, 163, 82);
+  }
+  
+  .invoice-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .action-select {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  .approve-btn,
+  .reject-btn {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .approve-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .reject-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  @media onlyscreen and(max-width:832px){
+    .invoice-item{
+        flex-direction: column;
+    }
+  }
