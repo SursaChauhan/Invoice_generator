@@ -2,7 +2,7 @@
 .invoice-summary {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
     padding: 10px;
     background-color: #f7f7f7;
     border: 1px solid #ccc;
@@ -12,25 +12,25 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  flex-wrap: wrap;
   }
-  /* .invoice-summary >div{
-    display: flex;
-  } */
+
   .invoice-item {
     display: flex;
     font-size: 15px;
     /* flex-direction: column; */
     align-items: center;
-    /* margin-right: 15px; */
+    margin-right: 3px;
+    height: 50px;
     background-color: rgb(235,228,242);
     padding: 10px 5px;
     border-radius: 4px;
+    margin-top: 5px;
+    width: 205px;
   }
   
   .label {
     font-weight: bold;
-    margin-bottom: 5px;
   }
   
   .value {
@@ -40,6 +40,7 @@
   .invoice-actions {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
   }
   
   .action-select {
@@ -66,8 +67,22 @@
     color: white;
   }
   
-  @media onlyscreen and(max-width:832px){
+  @media only screen and(min-width:440px)and (  max-width:832px){
+
+  }
+
+  @media only screen and (max-width: 430px) {
+
     .invoice-item{
-        flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      align-items: center;
+    }
+    .invoice-summary{
+        align-items: flex-start; 
+        gap: 5px; 
+justify-content: center;
+
     }
   }
+

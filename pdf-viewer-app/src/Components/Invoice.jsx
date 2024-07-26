@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Invoice.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Invoice = () => {
     const [currency, setCurrency] = useState("INR");
@@ -23,7 +25,7 @@ const Invoice = () => {
         console.log(currency,invBasicAmt,invTaxAmt,advancePaid,netPayableAmt,alternatePayee1,alternatePayee2,city,street,country,bankAccNo,bankKey,reference)
 
         try {
-            await axios.post('http://localhost:8080/form/submit', {
+            await axios.post('https://invoice-backend-6.onrender.com/form/submit', {
                 currency,
                 basicamt: invBasicAmt,
                 taxamt: invTaxAmt,
@@ -38,10 +40,11 @@ const Invoice = () => {
                 accno: bankAccNo,
                 reference,
             });
-            alert('Data submitted successfully!');
+            toast.success('Data submitted successfully!');
         } catch (error) {
             console.error('Error submitting data:', error);
-            alert('Failed to submit data.');
+            toast.error("Failed to submit data");
+           
         }
     };
 
@@ -237,6 +240,7 @@ const Invoice = () => {
                     <button className="add-button" onClick={handleAdd}>Add</button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

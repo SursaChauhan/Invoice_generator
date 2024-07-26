@@ -1,11 +1,9 @@
 .Invoice-container {
     width: 50%;
-    /* max-width: 800px;  */
-    /* Optional: Maximum width to prevent stretching too wide */
     padding: 0 5px;
     border: 1px solid #ddd;
     background-color: #f9f9f9;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto; 
     height: 100vh;
     overflow-y: auto;
   }
@@ -17,26 +15,24 @@
   }
   
   .invoice-amount-details, .alternate-payee-details {
-    margin-bottom: 30px; /* Space between sections */
+    margin-bottom: 30px;
   }
   
   .invoice-amount-details div, .alternate-payee-details div {
     display: flex;
-    /* flex-wrap: wrap; */
-     /* Allows wrapping to next line on small screens */
-    align-items: center; /* Align items vertically centered */
-    margin-bottom: 20px; /* Space between each label-input pair */
+    align-items: center; 
+    margin-bottom: 20px; 
   }
   
   .invoice-amount-details label, .alternate-payee-details label {
-    flex: 0 1 200px; /* Flex grow, shrink, and basis for responsive label width */
-    margin-right: 10px; /* Space between label and input */
+    flex: 0 1 200px; 
+    margin-right: 10px; 
     font-size: 16px;
     text-align: left;
   }
   
   .invoice-amount-details input, .alternate-payee-details input {
-    flex: 1 1 200px; /* Flex grow, shrink, and basis for responsive input width */
+    flex: 1 1 200px; 
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -68,33 +64,9 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-     /* Wraps radio buttons to new lines if necessary */
   }
   
-  @media only screen and (max-width: 600px) {
-
-    .Invoice-container{
-        width: fit-content;
-    }
-    .invoice-amount-details label, .alternate-payee-details label {
-      flex: 1 1 100%; /* Labels take full width on small screens */
-      margin-right: 0;
-      margin-bottom: 8px; /* Add space below labels */
-    }
-  
-    .invoice-amount-details input, .alternate-payee-details input {
-      flex: 1 1 100%; /* Inputs take full width on small screens */
-    }
-  
-    .alternate-payee-details .radio-group {
-      flex-direction: column; /* Stack radio buttons vertically on small screens */
-    }
-  }
-
   .line-item-details {
-    /* background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px; */
     padding: 20px;
     margin-bottom: 10rem;
   }
@@ -205,4 +177,29 @@
     background-color: rgb(229,229,229);
     color: rgb(85, 106, 136);
     padding: 10px 15px;
+  }
+
+  @media only screen and (max-width: 430px) {
+
+    .Invoice-container{
+        width: 99%;
+        padding: 0;
+        margin: auto;
+    }
+    .invoice-amount-details label, .alternate-payee-details label {
+      flex: 1 1 100%; 
+      margin-right: 0;
+      margin-bottom: 8px; 
+    }
+  
+    .invoice-amount-details input, .alternate-payee-details input {
+      flex: 1 1 100%;
+    }
+  
+    .alternate-payee-details .radio-group {
+      flex-direction: column; 
+    }
+    .line-item-details{
+        margin-bottom: 2rem;
+    }
   }
