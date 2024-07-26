@@ -1,6 +1,3 @@
-Here’s a README template for your `Invoice_generator` project:
-
----
 
 # Invoice Generator
 
